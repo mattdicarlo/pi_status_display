@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
+from .lcd_util import label_line
 import dothat.lcd as lcd
 import fcntl
 import socket
 import struct
-from .lcd_util import label_line
 
 
 def _get_addr(ifname):
