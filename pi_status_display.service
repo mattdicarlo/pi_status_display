@@ -1,0 +1,12 @@
+[Unit]
+Description=pi status display LCD driver
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/pi_status_display
+ExecStart=/opt/pi_status_display/main.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
