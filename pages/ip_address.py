@@ -24,13 +24,13 @@ def display():
     eth0 = _get_addr('eth0')
     host = socket.gethostname()
 
+    lines = (
+        label_line('h', host),
+        label_line('e', eth0),
+        label_line('w', wlan0),
+    )
+
     lcd.clear()
-
-    lcd.set_cursor_position(0, 0)
-    lcd.write(label_line('h', host))
-
-    lcd.set_cursor_position(0, 1)
-    lcd.write(label_line('e', eth0))
-
-    lcd.set_cursor_position(0, 2)
-    lcd.write(label_line('w', wlan0))
+    for idx, line in enumerate(lines):
+        lcd.set_cursor_position(0, idx)
+        lcd.write(line)
