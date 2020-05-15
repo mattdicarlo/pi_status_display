@@ -28,7 +28,7 @@ class PageList:
 _pages = PageList()
 
 
-def run():
+def run(interval_seconds = 1):
     reset()
 
     # Blank the display on termination.
@@ -37,7 +37,7 @@ def run():
 
     # Interval timer emits SIGALRM in n seconds, then every n after.
     signal.signal(signal.SIGALRM, _on_update)
-    signal.setitimer(signal.ITIMER_REAL, 1, 1)
+    signal.setitimer(signal.ITIMER_REAL, 1, interval_seconds)
 
     # Cause the process to sleep until a signal is received.
     while True:

@@ -8,4 +8,4 @@ if __name__ == '__main__':
     """
 
     print('Starting...')
-    pages.run()
+    pages.run(interval_seconds=5)
